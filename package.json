@@ -4,7 +4,9 @@
   "description": "",
   "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.prod.config.js --progress --colors",
+    "watch": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,22 @@
   },
   "homepage": "https://github.com/pkorzh/korzh.io#readme",
   "dependencies": {
-    "s3": "^4.4.0"
+    "css-loader": "0.14.5",
+    "extract-text-webpack-plugin": "1.0.1",
+    "file-loader": "0.8.5",
+    "html-loader": "^0.4.5",
+    "image-webpack-loader": "1.7.0",
+    "node-sass": "^4.5.0",
+    "raw-loader": "0.5.1",
+    "s3": "^4.4.0",
+    "sass-loader": "^6.0.3",
+    "url-loader": "0.5.7",
+    "webpack": "1.12.12"
+  },
+  "devDependencies": {
+    "@tanepiper/robots-webpack-plugin": "^0.4.0",
+    "favicons-webpack-plugin": "0.0.7",
+    "html-webpack-plugin": "^2.22.0",
+    "webpack-dev-server": "1.14.1"
   }
 }
