@@ -1,10 +1,11 @@
 var path = require('path')
 var webpack = require('webpack')
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 var RobotsPlugin = require('@tanepiper/robots-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     context: __dirname,
@@ -29,7 +30,13 @@ module.exports = {
                     allow: ['*'],
                 }
             ]
-        })
+        }),
+        new CopyWebpackPlugin([
+            {
+                from: './src/static/',
+                to: 'static'
+            }
+        ])
     ],
 
     module: {
